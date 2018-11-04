@@ -1,12 +1,141 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
 
-<h1>this is base file</h1>
+  <!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
 
-</body>
+	<link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,200,300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+	{% load static %}
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+	<!-- Flaticons  -->
+	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<!-- Modernizr JS -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="{% static 'js/respond.min.js' %}"></script>
+	<![endif]-->
+
+    {% block headers %} {% endblock %}
+    {% block title %}
+        <title>Article Template</title>
+    {% endblock %}
+
+
+	</head>
+
+	<body>
+
+	<div class="colorlib-loader"></div>
+
+	<div id="page">
+
+        <!-- header -->
+        {% include 'header.html' %}
+
+        <!-- sidebar -->
+        {% include 'sidebar.html' %}
+
+        <!-- content -->
+		{% block content %} {% endblock %}
+
+		<div id="colorlib-instagram">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0 colorlib-heading text-center">
+					<h2>Instagram</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="instagram-entry">
+					<a href="#" class="instagram text-center" style="background-image: url(images/gallery-1.jpg);">
+					</a>
+					<a href="#" class="instagram text-center" style="background-image: url(images/gallery-2.jpg);">
+					</a>
+					<a href="#" class="instagram text-center" style="background-image: url(images/gallery-3.jpg);">
+					</a>
+					<a href="#" class="instagram text-center" style="background-image: url(images/gallery-4.jpg);">
+					</a>
+					<a href="#" class="instagram text-center" style="background-image: url(images/gallery-5.jpg);">
+					</a>
+					<a href="#" class="instagram text-center" style="background-image: url(images/gallery-6.jpg);">
+					</a>
+					<a href="#" class="instagram text-center" style="background-image: url(images/gallery-7.jpg);">
+					</a>
+					<a href="#" class="instagram text-center" style="background-image: url(images/gallery-8.jpg);">
+					</a>
+				</div>
+			</div>
+		</div>
+
+        <!-- footer -->
+        {% include 'footer.html' %}
+
+
+
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<!-- Flexslider -->
+	<script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+	<!-- Owl carousel -->
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<!-- Magnific Popup -->
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'js/magnific-popup-options.js' %}"></script>
+	<!-- Main -->
+	<script src="{% static 'js/main.js' %}"></script>
+
+    {% block footers %} {% endblock %}
+
+	</body>
 </html>
+
