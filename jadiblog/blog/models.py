@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
-from django.utils.crypto import random
+from django.utils.crypto import get_random_string
 
 
 # Create your models here.
@@ -57,6 +57,6 @@ class Post(models.Model):
              update_fields=None, *args, **kwargs):
         new_slug = slugify(self.title, allow_unicode=True)
         if self.slug[:-number_of_random_char] != new_slug:
-            self.slug = new_slug + '-' + random(number_of_random_char)
+            self.slug = new_slug + '-' + get_random_string(number_of_random_char)
         super(Post, self).save(*args, **kwargs)
 
