@@ -56,7 +56,7 @@ class Post(models.Model):
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None, *args, **kwargs):
         new_slug = slugify(self.title, allow_unicode=True)
-        if self.slug[:-number_of_random_char] != new_slug:
+        if self.slug[:-number_of_random_char + 1 ] != new_slug:
             self.slug = new_slug + '-' + get_random_string(number_of_random_char)
         super(Post, self).save(*args, **kwargs)
 
