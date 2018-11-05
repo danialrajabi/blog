@@ -8,30 +8,30 @@ from django.utils.crypto import random
 
 
 class Category(models.Model):
-    title = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True, allow_unicode=True, editable=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.title
+        return self.name
 
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None, *args, **kwargs):
-        self.slug = slugify(self.slug)
+        self.slug = slugify(self.name, allow_unicode=True)
         super(Category, self).save(*args, **kwargs)
 
 
 class Tag(models.Model):
-    title = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True, allow_unicode=True, editable=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.title
+        return self.name
 
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None, *args, **kwargs):
-        self.slug = slugify(self.slug)
+        self.slug = slugify(self.name, allow_unicode=True)
         super(Tag, self).save(*args, **kwargs)
 
 
@@ -55,7 +55,7 @@ class Post(models.Model):
 
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None, *args, **kwargs):
-        new_slug = slugify(self.slug, allow_unicode=True)
+        new_slug = slugify(self.title, allow_unicode=True)
         if self.slug[:-number_of_random_char] != new_slug:
             self.slug = new_slug + '-' + random(number_of_random_char)
         super(Post, self).save(*args, **kwargs)
