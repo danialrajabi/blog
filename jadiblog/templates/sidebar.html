@@ -25,11 +25,11 @@
 							{% for post in recent_post %}
 							<div class="f-entry" style="min-height: 133px;">
 								{% if post.featured_image %}
-								<a href="#" class="featured-img" style="background-image: url('{{post.featured_image.url}}');"></a>
+								<a href="{{post.get_absolute_url}}" class="featured-img" style="background-image: url('{{post.featured_image.url}}');"></a>
 								{% endif %}
 								<div class="desc">
 									<span><i class="icon-calendar3"></i>{{post.created_at|naturaltime}}</span>
-									<h3><a href="#">{{post.title}}</a></h3>
+									<h3><a href="{{post.get_absolute_url}}">{{post.title}}</a></h3>
 								</div>
 							</div>
 							{% endfor %}
