@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <title>
+        {% block titile %}
+        Star Admin Free Bootstrap Admin Dashboard Template
+        {% endblock %}
+   </title>
+
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{% static 'users/css/vendors/materialdesignicons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'users/css/vendors/vendor.bundle.base.css' %}">
+  <link rel="stylesheet" href="{% static 'users/css/vendors/vendor.bundle.addons.css' %}">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{% static 'users/css/style.css' %}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{% static 'users/images/favicon.png' %}" />
+
+    {% block extra_css %}
+    {% endblock %}
+</head>
+
+<body>
+  <div class="container-scroller">
+    {% block content %}
+    {% endblock %}
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="{% static 'users/js/vendors/vendor.bundle.base.js' %}"></script>
+  <script src="{% static 'users/js/vendors/vendor.bundle.addons.js' %}"></script>
+  <!-- endinject -->
+  <!-- inject:js -->
+  <script src="{% static 'users/js/off-canvas.js' %}"></script>
+  <script src="{% static 'users/js/misc.js' %}"></script>
+  <!-- endinject -->
+    {% block extra_js %}
+    {% endblock %}
+</body>
+
+</html>
