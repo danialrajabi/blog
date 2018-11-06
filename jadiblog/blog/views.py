@@ -51,3 +51,13 @@ class PostCreateView(generic.CreateView):
     model = Post
     fields = ('author', 'title', 'description', 'category', 'tags', 'featured_image',)
     template_name = 'blog/create_post.html'
+
+
+class PostUpdateView(generic.UpdateView):
+    model = Post
+    fields = ('author', 'title', 'description', 'category', 'tags', 'featured_image',)
+    template_name = 'blog/create_post.html'
+
+
+
+

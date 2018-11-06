@@ -18,12 +18,12 @@
 <div class="content">
 	<article class="blog-entry">
 		<div class="blog-wrap">
-			<span class="category text-center"><a href="blog.html">{{post.category}}</a></span>
-			<h2 class="text-center"><a href="blog.html">{{post.title}}</a></h2>
+			<span class="category text-center"><a href="#">{{post.category}}</a></span>
+			<h2 class="text-center"><a href="{{post.get_absolute_url}}">{{post.title}}</a></h2>
 			{% if post.featured_image %}
 				<a class="blog-img text-center" style="background-image:url('{{post.featured_image.url}}');"></a>
 			{% endif %}
-			<span class="category text-center"><a href="blog.html"><i class="icon-calendar3"></i>{{post.created_at|naturaltime}}</a> | <a href="blog.html" class="posted-by"><i class="icon-user2"></i> by {{post.author}}</a> | <a href="blog.html"><i class="icon-bubble3"></i> 5 Comments</a></span>
+			<span class="category text-center"><a href="#"><i class="icon-calendar3"></i>{{post.created_at|naturaltime}}</a> | <a href="#" class="posted-by"><i class="icon-user2"></i> by {{post.author}}</a> | <a href="#"><i class="icon-bubble3"></i> 5 Comments</a></span>
 		</div>
 		<div class="desc">
 			{{post.description|safe}}

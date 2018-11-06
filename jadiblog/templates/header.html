@@ -5,7 +5,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-xs-2">
-							<div id="colorlib-logo"><a href="index.html">Article.</a></div>
+							<div id="colorlib-logo"><a href="{% url 'blog:home' %}">Article.</a></div>
 						</div>
 						<div class="col-xs-10 text-right menu-1">
 							<ul>
@@ -15,6 +15,11 @@
 								<li><a href="travels.html">Travels</a></li>
 								<li><a href="gallery.html">Gallery</a></li>
 								<li><a href="about.html">About Me</a></li>
+								{% if user.is_authenticated %}
+								<li class="btn btn-info"><a href="#">Dashboard</a></li>
+								{% else %}
+								<li class="btn btn-success"><a href="#">Login</a></li>
+								{% endif %}
 							</ul>
 						</div>
 					</div>
