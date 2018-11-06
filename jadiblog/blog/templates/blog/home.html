@@ -21,10 +21,10 @@
 	<article class="blog-entry">
 		<div class="blog-wrap">
 			<span class="category text-center"><a href="blog.html">{{post.category}}</a></span>
-			<h2 class="text-center"><a href="blog.html">{{post.title}}</a></h2>
+			<h2 class="text-center"><a href="{{post.get_absolute_url}}">{{post.title}}</a></h2>
 			<div class="blog-image">
 				{% if post.featured_image %}
-				<a href="blog.html" class="blog-img text-center" style="background-image:url('{{post.featured_image.url}}');"><span><i class="icon-link"></i></span></a>
+				<a href="{{post.get_absolute_url}}" class="blog-img text-center" style="background-image:url('{{post.featured_image.url}}');"><span><i class="icon-link"></i></span></a>
 				{% endif %}
 				<ul class="share">
 				<li class="text-vertical"><i class="icon-share3"></i></li>
@@ -36,9 +36,9 @@
 			<span class="category text-center"><a href="blog.html"><i class="icon-calendar3"></i>{{post.created_at|naturaltime}}</a> | <a href="blog.html" class="posted-by"><i class="icon-user2"></i> by {{post.author}}</a> | <a href="blog.html"><i class="icon-bubble3"></i> 5 Comments</a></span>
 		</div>
 		<div class="desc">
-			<p class="first-letra">{{post.description}}</p>
+			<p class="first-letra">{{post.description|safe}}</p>
 		</div>
-		<p class="text-center"><a href="blog.html" class="btn btn-primary btn-custom">Continue Reading</a></p>
+		<p class="text-center"><a href="{{post.get_absolute_url}}" class="btn btn-primary btn-custom">Continue Reading</a></p>
 	</article>
 	{% endfor %}
 	<div class="row">
