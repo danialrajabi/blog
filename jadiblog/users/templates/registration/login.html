@@ -13,6 +13,8 @@
 
     {% csrf_token %}
     {{form|crispy}}
+    <!--<input type="text" name="{{ form.username.name }}" />-->
+    <!--<input type="password" name="{{ form.password.name }}" />-->
     <input type="submit" value="Login">
 
 </form>
