@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'crispy_forms',
     'blog',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +125,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+LOGIN_URL = 'users:login'
+LOGIN_REDIRECT_URL = 'blog:home'
