@@ -36,7 +36,7 @@
 			<span class="category text-center"><a href="blog.html"><i class="icon-calendar3"></i>{{post.created_at|naturaltime}}</a> | <a href="blog.html" class="posted-by"><i class="icon-user2"></i> by {{post.author}}</a> | <a href="blog.html"><i class="icon-bubble3"></i> 5 Comments</a></span>
 		</div>
 		<div class="desc">
-			<p class="first-letra">{{post.description|safe}}</p>
+			<p class="first-letra">{{post.description|safe|truncatewords:65}}</p>
 		</div>
 		<p class="text-center"><a href="{{post.get_absolute_url}}" class="btn btn-primary btn-custom">Continue Reading</a></p>
 	</article>
