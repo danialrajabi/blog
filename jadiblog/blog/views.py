@@ -45,3 +45,9 @@ class PostDetail(generic.DetailView):
         context = super().get_context_data(**kwargs)
         context['recent_post'] = Post.objects.all().order_by('-created_at')[:NUMBER_RECENT_POSTS]
         return context
+
+
+class PostCreateView(generic.CreateView):
+    model = Post
+    fields = ('author', 'title', 'description', 'category', 'tags', 'featured_image',)
+    template_name = 'blog/create_post.html'
